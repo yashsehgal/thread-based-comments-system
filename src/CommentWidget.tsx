@@ -33,6 +33,22 @@ export default function CommentWidget() {
                         Comment
                     </button>
                 </div>
+                <div className='mt-6' />
+                <div className='post-comment-thread-wrapper'>
+                    {commentThreadRef.length == 0
+                        ? <React.Fragment></React.Fragment>
+                        : <React.Fragment>
+                            {commentThreadRef.map((comment, commentIndex) => {
+                                return (
+                                    <div className='w-full h-auto flex flex-row items-center justify-flex-start' key={commentIndex}>
+                                        {comment.username}
+                                        {comment.comment}
+                                    </div>
+                                )
+                            })}
+                        </React.Fragment>
+                    }
+                </div>
                 <div className='new-comment-thread-input-wrapper w-full h-auto flex flex-row items-center justify-between gap-8 mt-6'
                     style={{
                         display: threadInputVisibilityRef
@@ -41,7 +57,9 @@ export default function CommentWidget() {
                     <input type="text" placeholder='Type your comment or response to this post :)' 
                         className='px-4 py-1.5 rounded-md border border-gray-400 w-full'
                     />
-                    <button className='px-4 py-1 flex flex-row items-center justify-center text-white font-semibold rounded-md bg-green-600 hover:bg-green-800'>
+                    <button className='px-4 py-1 flex flex-row items-center justify-center text-white font-semibold rounded-md bg-green-600 hover:bg-green-800'
+
+                    >
                         Reply
                     </button>
                     <button className='px-4 py-1 flex flex-row items-center justify-center text-white font-semibold rounded-md bg-red-600 hover:bg-red-800'
