@@ -39,9 +39,14 @@ export default function CommentWidget() {
                     }}
                 >
                     <input type="text" placeholder='Type your comment or response to this post :)' 
-                        className='px-4 py-1.5 rounded-md border border-gray-400 w-full'
+                        className='px-4 py-1.5 rounded-md border border-gray-400 w-full' id="comment-thread-input-value"
                     />
-                    <button className='px-4 py-1 flex flex-row items-center justify-center text-white font-semibold rounded-md bg-green-600 hover:bg-green-800'>
+                    <button className='px-4 py-1 flex flex-row items-center justify-center text-white font-semibold rounded-md bg-green-600 hover:bg-green-800'
+                        onClick={() => {
+                            let commentThreadInputValue = document.getElementById('comment-thread-input-value');
+                            
+                        }}
+                    >
                         Reply
                     </button>
                     <button className='px-4 py-1 flex flex-row items-center justify-center text-white font-semibold rounded-md bg-red-600 hover:bg-red-800'
