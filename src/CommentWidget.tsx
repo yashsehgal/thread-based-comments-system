@@ -33,6 +33,22 @@ export default function CommentWidget() {
                         Comment
                     </button>
                 </div>
+                <div className='mt-6' />
+                <div className='post-comment-thread-wrapper'>
+                    {commentThreadRef.length == 0
+                        ? <React.Fragment></React.Fragment>
+                        : <React.Fragment>
+                            {commentThreadRef.map((comment, commentIndex) => {
+                                return (
+                                    <div className='w-full h-auto flex flex-row items-center justify-flex-start' key={commentIndex}>
+                                        {comment.username}
+                                        {comment.comment}
+                                    </div>
+                                )
+                            })}
+                        </React.Fragment>
+                    }
+                </div>
                 <div className='new-comment-thread-input-wrapper w-full h-auto flex flex-row items-center justify-between gap-8 mt-6'
                     style={{
                         display: threadInputVisibilityRef
